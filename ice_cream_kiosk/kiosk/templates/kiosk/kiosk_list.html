@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>kiosk list</title>
+</head>
+<body>
+    <h1>list kiosk</h1>
+    <ul>
+        {% for kiosk in kiosks %}
+            <li>{{ kiosk.name }} - {{ kiosk.location }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'ice_cream_list' %}">ice cream list in kiosk</a>
+    <form method="get" action="{% url 'ice_cream_search' %}">
+        <input type="text" name="q" placeholder="Search Ice Cream Flavors" value="{{ query }}">
+        <button type="submit">button</button>
+    </form>
+</body>
+</html>

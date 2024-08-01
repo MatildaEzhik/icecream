@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>search ice cream</title>
+</head>
+<body>
+    <ul>
+        {% for ice_cream in ice_creams %}
+            <li>{{ ice_cream.name }} - {{ ice_cream.flavor }} - ${{ ice_cream.price }}</li>
+        {% empty %}
+            <li>no ice cream yet</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'ice_cream_list' %}">to ice cream list</a>
+    <a href="{% url 'kiosk_list' %}">to kiosks</a>
+</body>
+</html>

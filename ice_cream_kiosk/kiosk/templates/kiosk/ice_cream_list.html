@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ice cream list</title>
+</head>
+<body>
+    <h1>list ice cream</h1>
+    <ul>
+        {% for ice_cream in ice_creams %}
+            <li>{{ ice_cream.name }} - {{ ice_cream.flavor }} - ${{ ice_cream.price }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'kiosk_list' %}">view kiosks</a>
+    <form method="get" action="{% url 'ice_cream_search' %}">
+        <input type="text" name="q" placeholder="Search Ice Cream Flavors" value="{{ query }}">
+        <button type="submit">button</button>
+    </form>
+</body>
+</html>
